@@ -7,7 +7,7 @@ export function createNewCategory() {
     } else {
         let categoryDetails = {
             id: categoryList.length + 1,
-            name: categoryName.value,
+            name: categoryName.value
         }
 
         categoryList.push(categoryDetails);
@@ -30,24 +30,33 @@ export function listCategories() {
     const categoryList = JSON.parse(localStorage.getItem('categoryList')) || [];
     const listCategory = document.querySelector('.categories-list');
     const selectCategory = document.querySelector('#category');
+    const categoriesHome = document.querySelector('.categories')
     
     listCategory.innerHTML = '';
+    categoriesHome.innerHTML = '';
+    
     if(categoryList.length != 0) {
         selectCategory.innerHTML = '<option value="">Selecione uma categoria</option>';
         categoryList.forEach(category => {
             const newLi = document.createElement('li');
-            newLi.innerHTML =  `<li id="category-${category.id}">${category.name}<a href="#" id="delete-${category.id}"> Del</a></li>`
+            newLi.innerHTML =  `<li class="category-item" id="category-${category.id}">${category.name}<a href="#" id="delete-${category.id}"><img src="../src/images/trash.svg"></a></li>`
             listCategory.appendChild(newLi);
 
             const newOption = document.createElement('option');
             newOption.value = category.name;
             newOption.innerText = category.name;
 
+            const newDivCategory = document.createElement('div');
+            newDivCategory.id = `category-${category.id}`;
+            newDivCategory.innerHTML = `<button id="cat-${category.name}">${category.name}</button>`;
+
+            categoriesHome.appendChild(newDivCategory);
             selectCategory.appendChild(newOption);
         });
     } else {
+        categoriesHome.innerHTML = '<h2 class="warning">Nenhuma categoria cadastrada</h2>';
         selectCategory.innerHTML = '<option value="">Nenhuma categoria cadastrada</option>';
-        listCategory.innerHTML = '<li>Nenhuma categoria cadastrada</li>';
+        listCategory.innerHTML = '<li class="">Nenhuma categoria cadastrada</li>';
     }
 }
 

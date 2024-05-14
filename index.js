@@ -1,5 +1,5 @@
 import { modalNewTask, modalNewCategory, listCategoryModal } from './dist/scripts/modal.js'
-import { createNewTask } from './dist/scripts/functions/createTask.js'
+import { createNewTask, renderTasks } from './dist/scripts/functions/createTask.js'
 import { createNewCategory, listCategories } from './dist/scripts/functions/createCategories.js'
 
 const categoryList = document.getElementById('my-categories-button');
@@ -28,3 +28,4 @@ addNewTaskButton.addEventListener('click', createNewTask);
 addNewCategory.addEventListener('click', createNewCategory);
 
 listCategories();
+renderTasks();

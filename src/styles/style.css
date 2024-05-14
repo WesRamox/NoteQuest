@@ -4,6 +4,7 @@
 
 :root {
     --primary-color: #EE1A4D;
+    --secondary-color: #1d7be6;
     --bg-color: #222222;
     --bg-modal: rgba(20, 20, 20, 0.773);
     --bg-modal-secondary: rgba(20, 20, 20, 0.9);
@@ -159,3 +160,189 @@ header {
     min-height: 550px;
 }
 
+/* Content */
+
+.categories {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.categories div button {
+    transition: all 0.5s ease;
+    width: 200px;
+    height: 30px;
+}
+.categories div button:hover {
+    background-color: var(--alternative-text-color);
+    transition: all 0.5s ease;
+
+}
+
+.categories::-webkit-scrollbar {
+    background-color: var(--input-placeholder-color);
+    height: 4px;
+}
+
+.categories::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text-color);
+    border-radius: 5px;
+}
+
+
+.categories button {
+    background-color: var(--btn-bg-secondary);
+    padding: 2px 15px;
+    border-radius: 5px;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.warning {
+    font-size: 1.2rem;
+    cursor: default;
+}
+
+.category-item {
+    display: flex;
+}
+
+.note-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.note-header ul {
+    list-style-type: none;
+}
+
+#task-list {
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#task-list li {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--btn-bg-secondary);
+    color: var(--primary-text-color);
+    width: 30%;
+    padding: 15px;
+    min-width: 230px;   
+}
+
+#task-list li p {
+    display: flex;
+    text-align: flex-start;
+    align-items: center;
+}   
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+#categoryHome {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    height: 100%;
+}
+
+.especify {
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 0.8rem;
+    background-color: var(--secondary-color)
+}
+
+.priorityText {
+    font-size: 1rem;
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+}
+
+.priorityP {
+    margin-right: 3px;
+}
+
+#priorityBall {
+    color: var(--secondary-text-color);
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.zero::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 36px;
+    height: 100%;    
+    position: absolute;
+    scale: 0.6;
+    background-color: #1d7be6;
+}
+
+.baixa::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 45px;
+    height: 100%;    
+    position: absolute;
+    scale: 0.6;
+    background-color: #22ff00;
+}
+
+.media::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 50px;
+    height: 100%;    
+    position: absolute;
+    scale: 0.6;
+    background-color: #fff200;
+}
+
+.alta::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 35px; 
+    height: 100%;    
+    position: absolute;
+    scale: 0.6;
+    background-color: #cc0f3d;
+}

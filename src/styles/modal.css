@@ -263,3 +263,9 @@ input[type='radio']:checked+.custom-radio span {
     background-color: var(--bg-color);
     border-radius: 5px;
 }
+
+.categories-list img {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+}
