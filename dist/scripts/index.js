@@ -1,6 +1,6 @@
-import { modalNewTask, modalNewCategory, listCategoryModal } from './dist/scripts/modal.js'
-import { createNewTask, renderTasks } from './dist/scripts/functions/createTask.js'
-import { createNewCategory, listCategories } from './dist/scripts/functions/createCategories.js'
+import { modalNewTask, modalNewCategory, listCategoryModal } from './modal.js'
+import { createNewTask, renderTasks } from './functions/createTask.js'
+import { createNewCategory, listCategories } from './functions/createCategories.js'
 
 const categoryList = document.getElementById('my-categories-button');
 const newCategoryButton = document.getElementById('new-category-button');
