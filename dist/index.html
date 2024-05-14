@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NoteQuest</title>
+        <link rel="stylesheet" href="../src/styles/style.css">
+        <link rel="shortcut icon" href="../src/images/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="modal-new-task hidden" id="new-task-modal" data-modal>
+            <div id="box-modal">
+                <div class="back" id="exit-modal">
+                    &lt;
+                </div>
+                <h1>Detalhes da Tarefa</h1>
+                <div id="task-details">
+                    <div class="details">
+                        <label for="description">Nome da Tarefa</label>
+                        <input type="text" placeholder="Ex: Revisar Functions" id="description" name="description">
+                    </div>
+                    <div class="category">
+                        <label for="category">Categoria</label>
+                        <select name="category" id="category">
+                            <option value="0">Crie uma categoria</option>
+                        </select>
+                    </div>
+                    <div class="sub-category">
+                        <label for="sub-category">Especificação</label>
+                        <input type="text" placeholder="Ex: Javascript" id="sub-category" name="sub-category">
+                    </div>
+                    <p class="priority-text">Selecione a prioridade</p>
+                    <div class="priority">
+                        <label for="tranquilo">
+                            <input type="radio" id="tranquilo" name="radio-priority" value="Zero"/>
+                            <div class="custom-radio">
+                              <span></span>
+                            </div>  
+                            <p>Zero</p>
+                        </label>
+                        <label for="prioridade-baixa">
+                            <input type="radio" id="prioridade-baixa" name="radio-priority" value="Baixa"/>
+                            <div class="custom-radio">
+                              <span></span>
+                            </div>
+                            <p>Baixa</p>
+                        </label>
+                        <label for="prioridade-media">
+                            <input type="radio" id="prioridade-media" name="radio-priority" value="Média"/>
+                            <div class="custom-radio">
+                              <span></span>
+                            </div>
+                            <p>Média</p>
+                        </label>
+                        <label for="prioridade-alta">
+                            <input type="radio" id="prioridade-alta" name="radio-priority" value="Alta" />
+                            <div class="custom-radio">
+                              <span></span>
+                            </div>
+                            <p>Alta</p>
+                        </label>
+                    </div>
+                    <button class="submit" id="addNewTask">Adicionar Tarefa</button>
+                </div>
+                <div class="error hidden">
+                    <p>Please enter a description for the task</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-new-task hidden" id="new-category-modal" data-modal>
+            <div id="box-modal">
+                <div class="back" id="exit-new-category">
+                    &lt;
+                </div>
+                <h1>Nova Categoria</h1>
+                <div id="task-details">
+                    <div class="category">
+                        <label for="new-category">Categoria</label>
+                        <input type="text" placeholder="Ex: Programação" id="new-category" name="new-category">
+                    </div>
+                    <button class="submit" id="addNewCategory">Adicionar Categoria</button>
+                </div>
+                <div class="error hidden">
+                    <p>Please enter a description for the task</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-new-task hidden" id="list-category-modal" data-modal>
+            <div id="box-modal">
+                <div class="back" id="exit-list-category">
+                    &lt;
+                </div>
+                <h1>Minhas Categorias</h1>
+                <div id="task-details">
+                    <div class="category">
+                        <ul class="categories-list">
+                        </ul>
+                    </div>
+                    <button class="submit" id="new-category-of-list">Voltar</button>
+                </div>
+                <div class="error hidden">
+                    <p>Please enter a description for the task</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <header class="header">
+                <h1 class="note-logo"><span id="note">Note</span><span id="quest">Quest</span></h1>
+                <a href="" id="help">
+                    <svg width="47" height="54" viewBox="0 0 47 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="2.99994" width="47" height="49" rx="23.5" fill="#EE1A4D"/>
+                        <path d="M23.2407 14.584C25.6167 14.584 27.5367 15.256 29.0007 16.6C30.4647 17.944 31.1967 19.744 31.1967 22C31.1967 24.52 30.4167 26.392 28.8567 27.616C27.2967 28.816 25.1847 29.416 22.5207 29.416L22.4127 32.836H19.5687L19.4247 27.148H20.4687C22.8447 27.148 24.7047 26.788 26.0487 26.068C27.3927 25.348 28.0647 23.992 28.0647 22C28.0647 20.56 27.6327 19.42 26.7687 18.58C25.9047 17.74 24.7407 17.32 23.2767 17.32C21.7887 17.32 20.6127 17.728 19.7487 18.544C18.9087 19.336 18.4887 20.428 18.4887 21.82H15.3927C15.3927 20.38 15.7167 19.12 16.3647 18.04C17.0127 16.936 17.9247 16.084 19.1007 15.484C20.3007 14.884 21.6807 14.584 23.2407 14.584ZM20.9727 40.216C20.3487 40.216 19.8207 40 19.3887 39.568C18.9567 39.136 18.7407 38.608 18.7407 37.984C18.7407 37.36 18.9567 36.832 19.3887 36.4C19.8207 35.968 20.3487 35.752 20.9727 35.752C21.5727 35.752 22.0767 35.968 22.4847 36.4C22.9167 36.832 23.1327 37.36 23.1327 37.984C23.1327 38.608 22.9167 39.136 22.4847 39.568C22.0767 40 21.5727 40.216 20.9727 40.216Z" fill="white"/>
+                    </svg>   
+                </a>
+                <p class="note-title">
+                    Vamos começar a organizar sua vida?
+                </p>	
+            <div class="buttons">
+                <div class="btn-center">
+                    <button id="new-task-button">Adicionar nova Task</button>
+                </div>
+                <div class="new-category">
+                    <button id="new-category-button">Nova Categoria</button>
+                </div>
+                <div class="all-categories">
+                    <button id="my-categories-button">Minhas Categorias</button>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="note">
+                <div class="note-header">
+
+                </div> 
+            </div> 
+        </main>  
+    </div>
+    <script src="../index.js" type="module"></script>
+</body>
+</html>

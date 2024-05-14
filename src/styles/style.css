@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './modal.css';
+
+
+:root {
+    --primary-color: #EE1A4D;
+    --bg-color: #222222;
+    --bg-modal: rgba(20, 20, 20, 0.773);
+    --bg-modal-secondary: rgba(20, 20, 20, 0.9);
+    --primary-text-color: #eaeaea;
+    --secondary-text-color: #DDDDDD;
+    --alternative-text-color: #141414;
+    --input-placeholder-color: #14141499;
+    --secondary-bg-color: #262626;
+    --btn-bg-secondary: #2c2c2c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    color: var(--primary-text-color);
+    flex-direction: column;
+    height: 100vh;
+}
+
+.hidden {
+    opacity: 0; 
+    visibility: hidden;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+.visible {
+    opacity: 1; 
+    visibility: show;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60vw;
+    min-width: 600px;
+}
+
+#help {
+    /* top: 80px; */
+    top: 10px;
+    right: 0;
+    position: absolute;
+}
+
+.note-logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+#note {
+    font-size: 4rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 45px;
+}
+
+#quest {
+    font-size: 2.2rem;
+    letter-spacing: 10px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.note-title {
+    margin-top: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-center {
+    order: 2;
+}
+
+.btn-center button {
+    font-weight: 300;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn-center button:hover {
+    background-color: #ff3d6d;
+    transition: all 0.5s ease;
+}
+
+.btn-center button:active {
+    background-color: #cc0f3d;
+    transition: all 0.1s ease;
+}
+
+.new-category {
+    order: 1;
+}
+
+.all-categories {
+    order: 3;
+}
+
+.new-category button, .all-categories button {
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: var(--btn-bg-secondary);
+    padding: 2px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.new-category button:hover, .all-categories button:hover {
+    background-color: #3c3c3c;
+    transition: all 0.5s ease;
+}
+
+.new-category button:active, .all-categories button:active {
+    background-color: #1c1c1c;
+    transition: all 0.2s ease;
+}
+
+.content {
+    background-color: var(--secondary-bg-color);
+    width: 60vw;
+    min-width: 600px;
+    margin-top: 50px;
+    border-radius: 10px;
+    min-height: 550px;
+}
+
