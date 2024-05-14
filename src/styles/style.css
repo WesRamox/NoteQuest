@@ -214,9 +214,21 @@ header {
 }
 
 .note-header {
+    overflow-y: scroll;
     display: flex;
+    height: 450px;
     justify-content: center;
     padding: 20px;
+}
+
+.note-header::-webkit-scrollbar {
+    background-color: var(--primary-text-color);
+    width: 2px;
+}
+
+.note-header::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 1px;
 }
 
 .note-header ul {
