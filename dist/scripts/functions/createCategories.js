@@ -21,7 +21,7 @@ export function createNewCategory() {
         const modal = document.querySelector("#new-category-modal");
         modal.classList.add('hidden');
         modal.classList.remove('visible');
-
+        
         listCategories();
     }
 }
@@ -39,7 +39,7 @@ export function listCategories() {
         selectCategory.innerHTML = '<option value="">Selecione uma categoria</option>';
         categoryList.forEach(category => {
             const newLi = document.createElement('li');
-            newLi.innerHTML =  `<li class="category-item" id="category-${category.id}">${category.name}<a href="#" id="delete-${category.id}"><img src="../src/images/trash.svg"></a></li>`
+            newLi.innerHTML =  `<li class="delete-category" id="category-${category.id}">${category.name}<a id="${category.name}" class="category-item">Excluir</a></li>`
             listCategory.appendChild(newLi);
 
             const newOption = document.createElement('option');

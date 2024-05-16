@@ -44,7 +44,7 @@ export function renderTasks() {
     if(taskList.length != 0) {
         taskList.forEach(task => {
             const newLi = document.createElement('li');
-            newLi.innerHTML =  `<p>${task.description} </p>
+            newLi.innerHTML =  `<p>${task.description}</p>
                                 <p class="tags"><span id="categoryHome">${task.category}</span><span class="especify">${task.especify}</span></p>
                                 <p class="priorityText"><span class="priorityP">Prioridade:</span><span id="priorityBall" class="${task.priority.toLowerCase()}">${task.priority}</span></p>`
             listTask.appendChild(newLi);
