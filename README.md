@@ -12,7 +12,7 @@ HTML, CSS e JAVASCRIPT
 
 ### Oque falta?
 - Deletar Tarefa
-- Deletar Categoria
+- [✅] Deletar Categoria
 - Atualizar Categoria
 - Atualizar Tarefa
 - Concluir Tarefa
