@@ -158,6 +158,7 @@ header {
     margin-top: 50px;
     border-radius: 10px;
     min-height: 550px;
+    max-width: 1000px;
 }
 
 /* Content */
@@ -211,6 +212,14 @@ header {
 
 .category-item {
     display: flex;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.category-item:hover {
+    transition: all 0.2s ease;
+    transform: scale(1.2);
 }
 
 .note-header {
@@ -222,7 +231,6 @@ header {
 }
 
 .note-header::-webkit-scrollbar {
-    background-color: var(--primary-text-color);
     width: 2px;
 }
 
@@ -243,6 +251,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 120px;
 }
 
 #task-list li {
@@ -255,7 +264,8 @@ header {
     color: var(--primary-text-color);
     width: 30%;
     padding: 15px;
-    min-width: 230px;   
+    border-radius: 10px;
+    min-width: 230px;  
 }
 
 #task-list li p {

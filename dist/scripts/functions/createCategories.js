@@ -48,7 +48,7 @@ export function listCategories() {
 
             const newDivCategory = document.createElement('div');
             newDivCategory.id = `category-${category.id}`;
-            newDivCategory.innerHTML = `<button id="cat-${category.name}">${category.name}</button>`;
+            newDivCategory.innerHTML = `<button class="categoryEspecify" id="cat-${category.name}">${category.name}</button>`;
 
             categoriesHome.appendChild(newDivCategory);
             selectCategory.appendChild(newOption);

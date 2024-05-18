@@ -15,6 +15,7 @@ export function createNewTask() {
             category: taskCategory.value,
             especify: taskEspecify.value,
             priority: taskPriority.value,
+            date: new Date().toLocaleDateString()
         }
 
         taskList.push(taskDetails);

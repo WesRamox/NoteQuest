@@ -35,11 +35,27 @@ addNewCategory.addEventListener('click', createNewCategory);
 listCategories();
 renderTasks();
 
+
 categoriesUl.addEventListener('click', (ev) => {
     ev.preventDefault();
     const button = ev.target;
     if (button.classList.contains('category-item')) {
         deleteCategory(button.id);
-        listCategories(); // Update the category list
+        listCategories();
     }
 });
+
+// const categoryEspecify = document.querySelectorAll('.categoryEspecify');
+
+// Futuramente adicionar a funcionalidade de editar categorias
+// categoryEspecify.forEach((button) => {
+//     button.addEventListener('click', (ev) => {
+//         ev.preventDefault();
+//         const button = ev.target;
+//         if (button.classList.contains('categoryEspecify')) {
+//             listCategoryModal();
+//         }
+//     })
+// });
+
+
